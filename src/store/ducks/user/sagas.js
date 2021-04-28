@@ -10,11 +10,11 @@ export function* newUser(payload) {
   try {
     const response = yield call(User.newUser, query)
     notifySuccess('User created successfully.')
-    
+    window.location.assign('/')
   } catch (msg) {
     notifyError(msg.response.data.errors[0])
   }
-  window.location.assign('/')
+  
 }
 
 export function* login(payload) {
